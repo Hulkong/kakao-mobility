@@ -2,54 +2,6 @@
 
 </br>
 
-## <strong style="color: rgb(252, 186, 3);">First of Assignment</strong>
-
----
-
-Aside from RDB, S3, etc, I focused entirely on building a Kubernetes environment.
-
-</br>
-
-### <strong style="color: rgb(252, 186, 3);">Public Cloud</strong>
-
-AWS
-
-</br>
-
-### <strong style="color: rgb(252, 186, 3);">Resource</strong>
-
-IAM  
-VPC  
-Rout53  
-ALB  
-EKS
-
-</br>
-
-### <strong style="color: rgb(252, 186, 3);">Process</strong>
-
-**1. Create AWS Account**  
-**2. Set MFA**  
-**3. Add user**  
-**4. Grant a role**  
-**5. Setting Environment of DEV**  
-**6. AWS Configure**  
-**7. Terraform apply**
-
-</br>
-
-### <strong style="color: rgb(252, 186, 3);">Reference</strong>
-
-[A vagrant project with an ubuntu box with the tools needed to do DevOps](https://github.com/Finfra/terraform_quickstart)
-
-[Setting up AWS EKS (Hosted Kubernetes)](https://github.com/Finfra/terraform-course/tree/master/c1-EKS)
-
-[Auto Deploymemnt of EKS Infrastructure on AWS with Terraform](https://github.com/reddypidugu/aws)
-
-[Provision an EKS Cluster (AWS)](https://learn.hashicorp.com/tutorials/terraform/eks)
-
-</br></br>
-
 ## <strong style="color: rgb(252, 186, 3);">Second of Assignment</strong>
 
 ---
@@ -75,8 +27,6 @@ Kind Version 0.8.1
 **1. Source TEST**
 
 ```bash
-cd Assignment02
-
 # install package
 npm install
 
@@ -92,9 +42,6 @@ curl http://localhost:8080
 **2. Unit TEST**
 
 ```bash
-cd Assignment02
-
-
 # Set up a local Kubernetes cluster
 ## 1. Grant execution permission
 chmod +x scripts/kind-with-registry.sh
