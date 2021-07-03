@@ -1,13 +1,19 @@
 const express = require('express');
 const app = express();
-const os = require("os");
-const hostname = os.hostname();
+const path = require('path');
+const indexRouter = require('./routes/index');
 const port = process.env.PORT || 8080;
 
-app.get('/', (req, res) => {
-  res.send(`Hostname is ${hostname}`);
-});
+
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
+
+
+app.use(express.json());
+app.use(express.static(path.join(__dirname, 'static')));
+app.use('/', indexRouter);
+
 
 app.listen(port, () => {
-  console.log(`helloworld: listening on port ${port}`);
+  console.log(`listening on port ${port}`);
 });
