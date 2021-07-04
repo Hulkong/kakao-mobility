@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: example2
+  name: example2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: example2
+  template:
+    metadata:
+      labels:
+        app: example2
+    spec:
+      containers:
+      - image: localhost:5000/assignment02:latest
+        imagePullPolicy: IfNotPresent
+        name: assignment02
+        ports:
+        - containerPort: 8080
+          name: assignment02
