@@ -30,7 +30,7 @@ AWS
 
 ### <strong style="color: rgb(252, 186, 3);">Infrastructure diagram</strong>
 
-![Alt text](EKS_Infra.PNG "EKS-based infrastructure configuration diagram")
+![Alt text](../EKS_Infra.PNG "EKS-based infrastructure configuration diagram")
 
 </br></br>
 
