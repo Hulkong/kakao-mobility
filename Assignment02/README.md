@@ -14,13 +14,16 @@ I deploy a web container to a Kubernetes environment using **"kind"** in my loca
 
 </br>
 
-**[Excute Environments]**  
-Ubuntu 20.04.1 LTS  
-Node Version 10.16.3  
-NPM Version 7.6.0  
-Docker Version 19.03.8  
-Kubernetes Client Version v1.21.2  
-Kind Version 0.8.1
+**[Excute Environments]**
+
+```txt
+# Ubuntu 20.04.1 LTS
+# Node v10.16.3
+# NPM v7.6.0
+# Docker v19.03.8
+# Kubernetes Client v1.21.2
+# Kind v0.8.1
+```
 
 </br>
 
@@ -53,36 +56,33 @@ scripts/kind-with-registry.sh
 
 # Create and upload docker images
 # 1. Build image
-docker build -t localhost:5000/assignment:1.0.0 -f ./Dockerfile.prod .
+docker build -t localhost:5000/assignment02:latest -f ./Dockerfile.prod .
 
 # 2. Excute container(Options)
-docker run -p 8080:8080 --name web-service localhost:5000/assignment:1.0.0
+docker run -p 8080:8080 --name web-service localhost:5000/assignment02:latest
 
 # 3. Upload image
-docker push localhost:5000/assignment:1.0.0
+docker push localhost:5000/assignment02:latest
 
 
 
 # Deploy to Kubernetes
-## 1. You can stop containers all at once using
-docker stop $(docker ps -a -q)
-
-## 2. Deploy the nginx docker container and run ia as a process on the cluster
+## 1. Deploy the nginx docker container and run ia as a process on the cluster
 kubectl apply -f manifests/5_deploy_using_local_registry.yaml
 
-## 3. Confirm the pod is running
+## 2. Confirm the pod is running
 kubectl get pods
 kubectl logs "name of pods"
 
-## 4. Expose the service
+## 3. Expose the service
 kubectl apply -f manifests/6_service_using_local_registry.yaml
 
-## 5. Confirm the service is running
+## 4. Confirm the service is running
 kubectl get services
 
-## 6. set it in a browser(http://localhost)
+## 5. set it in a browser(http://localhost)
 
-## 7. Clean up new cluster
+## 6. Clean up new cluster
 kind delete cluster --name mycluster
 ```
 
