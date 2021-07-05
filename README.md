@@ -156,13 +156,13 @@ I deploy a web container to a Kubernetes environment using **"kind"** in my loca
 ```bash
 cd Assignment02
 
-# install package
+# Install package
 npm install
 
-# start to server
+# Start to server
 node index.js
 
-# test
+# Test
 curl http://localhost:8080
 ```
 
@@ -220,10 +220,20 @@ kind delete cluster --name mycluster
 **3. Build**
 
 ```bash
+## Private docker registry must be running. Otherwise, run the following command first.
+## Set up a local Kubernetes cluster
+##
+## 1. Grant execution permission
+##    chmod +x scripts/kind-with-registry.sh
+##
+## 2. Run the cluster using the local registry
+##    scripts/kind-with-registry.sh
+
+
 # Grant execution permission
 chmod +x scripts/build.sh
 
-# excute
+# Excute
 scripts/build.sh
 ```
 
@@ -232,11 +242,25 @@ scripts/build.sh
 **4. Deploy**
 
 ```bash
+## Kind (local Kubernetes) must be running. Otherwise, run the following command first.
+## Set up a local Kubernetes cluster
+##
+## 1. Grant execution permission
+##    chmod +x scripts/kind-with-registry.sh
+##
+## 2. Run the cluster using the local registry
+##    scripts/kind-with-registry.sh
+
 # Grant execution permission
 chmod +x scripts/deploy.sh
 
-# excute
+# Excute
 scripts/deploy.sh
+
+# Test
+## Check in browser(http://localhost)
+## or 
+curl http://localhost
 ```
 
 </br>
